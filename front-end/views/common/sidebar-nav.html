@@ -1,0 +1,65 @@
+<div class="sidebar">
+    <nav class="sidebar-nav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.main"><i class="icon-speedometer"></i> Genel Görünüm</a>
+            </li>
+
+            <li class="divider"></li>
+            <li class="nav-title">
+                Sahalar
+            </li>
+            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.s1')}">
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.s1')}" href="#"><i class="icon-puzzle"></i> Kuzey Kollektörü</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s1.channel1"><i class="icon-puzzle"></i> 0 Noktası</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s1.channel2"><i class="icon-puzzle"></i> Su Alma Yapısı</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s1.channel3"><i class="icon-puzzle"></i> 50 Metre </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s1.channel4"><i class="icon-puzzle"></i> 75 Metre </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s1.channel5"><i class="icon-puzzle"></i> 100 Metre </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s1.channel6"><i class="icon-puzzle"></i> 500 Metre </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s1.allchannels"><i class="icon-puzzle"></i> Hepsi </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.s2')}">
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.s2')}" href="#"><i class="icon-star"></i> Güney Kollektörü</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s2.channel1"><i class="icon-star"></i> 50 Metre </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s2.channel2"><i class="icon-star"></i> 75 Metre </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s2.channel3"><i class="icon-star"></i> 100 Metre </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.s2.allchannels"><i class="icon-star"></i> Hepsi </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="nav-title">
+                Extras
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.calibration"><i class="icon-star"></i> Kalibrasyon </a>
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.reporting"><i class="icon-star"></i> Raporlama </a>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,83 @@
+<div ng-controller="reportingCtrl">
+  <div class="row">
+      <div class="col-sm-12 col-lg-12 ">
+          <div class="card">
+              <div class="card-header">
+                  <strong>{{title}}</strong>
+              </div>
+              <div class="card-block">
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label for="fieldname">Saha Adı</label>
+                              <select class="form-control" id="fieldname" ng-options="site as site.name for site in sites"
+                                      ng-model="selectedField" ng-change="updateSites(site.code)"></select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label for="channelname">Cihaz Adı</label>
+                              <select class="form-control" id="channelname" ng-options="channel as channel.name for channel in channels"
+                                      ng-model="selectedChannel" ng-change="updateChannels()"></select>
+                          </div>
+                      </div>
+                  </div>
+                  <!--/.row-->
+
+
+                  <div class="row">
+                      <div class="col-sm-4">
+                          <div class="form-group">
+                            <label class="form-control-label" for="startdate">Başlangıç Tarihi</label>
+                            <div class='input-group date' id='datetimepicker1'>
+                              <input ng-model="startDate" type='text' id="startdate" class="form-control" />
+                              <span class="input-group-addon">
+                                  <span class="glyphicon glyphicon-calendar"></span>
+                              </span>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                          <div class="form-group">
+                            <label class="form-control-label" for="enddate">Bitiş Tarihi</label>
+                            <div class='input-group date' id='datetimepicker2'>
+                              <input ng-model="endDate" type='text' id="enddate" class="form-control" />
+                              <span class="input-group-addon">
+                                  <span class="glyphicon glyphicon-calendar"></span>
+                              </span>
+                            </div>
+                            <script type="text/javascript">
+                                jQuery('#startdate').datetimepicker();
+                                jQuery('#enddate').datetimepicker();
+                            </script>
+                          </div>
+                      </div>
+
+                      <div class="col-sm-4">
+                          <div class="form-group">
+                              <label for="timebase">Raporlama Periyodu</label>
+                              <select class="form-control" id="timebase" ng-options="timebase as timebase.name for timebase in timeBases"
+                                      ng-model="selectedTimebase" ng-change="updateTimebase()"></select>
+                          </div>
+                      </div>
+                  </div>
+                  <!--/.row-->
+
+                  <div class="row">
+
+                      <div class="form-group col-sm-12 col-lg-12">
+                        <div class="form-actions">
+                            <button ng-click="showData()" type="submit" class="btn btn-primary">Verileri Göster</button>
+                            <button ng-click="exportToExcel()" type="button" class="btn btn-success">Excel'e Çıkar</button>
+                        </div>
+                      </div>
+                  </div>
+                  <!--/.row-->
+              </div>
+          </div>
+
+      </div>
+      <!--/.col-->
+    </div>
+
+</div>

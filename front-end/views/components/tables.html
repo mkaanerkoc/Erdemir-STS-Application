@@ -1,0 +1,66 @@
+<div class="animated fadeIn" ng-controller="tableCtrl" >
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> {{tagline}}
+                </div>
+                <div class="card-block">
+                    <table class="table table-bordered table-striped ">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Tarih</th>
+                                <th class="text-center">Saat</th>
+                                <th class="text-center">Sıcaklık A &#013; (&#8451;)</th>
+                                <th class="text-center">Sıcaklık B &#013; (&#8451;)</th>
+                                <th class="text-center">Sıcaklık &#010; &#013; (&#8451;)</th>
+                                <th class="text-center">Kabin Sıcaklığı &#013; (&#8451;)</th>
+                                <th class="text-center">Kabin Nemi (%)</th>
+                                <th class="text-center">Sinyal Gücü (dB)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="log in datas">
+                              <td class="text-center" title="'Tarih'" >
+                                  {{log.date}}</td>
+                              <td class="text-center" title="'Saat'" >
+                                  {{log.time}}</td>
+                              <td class="text-center" title="'Sıcaklık A &#013; (&#8451;)'">
+                                  {{log.temp1}}</td>
+                              <td class="text-center" title="'Sıcaklık B &#013; (&#8451;)'">
+                                  {{log.temp2}}</td>
+                              <td class="text-center" title="'Sıcaklık &#010; &#013; (&#8451;)'" >
+                                  {{log.outTemp}}</td>
+                              <td class="text-center" title="'Kabin Sıcaklığı &#013; (&#8451;)'">
+                                  {{log.tempC}}</td>
+                              <td class="text-center" title="'Kabin Nemi (%)'">
+                                  {{log.humdC}}</td>
+                              <td class="text-center" title="'Sinyal Gücü (dB)'">
+                                  {{log.rssi}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Prev</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+    </div>
+    <!--/.row-->
+</div>

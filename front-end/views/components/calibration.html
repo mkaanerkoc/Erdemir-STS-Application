@@ -1,0 +1,85 @@
+<div ng-controller="calibrationCtrl">
+
+<div ng-repeat="x in calibDatas" class="panel panel-info">
+  <div class="animated fadeIn" >
+      <div class="row">
+          <div class="col-lg-12 col-sm-6">
+              <div class="card">
+                  <div class="card-header">
+                      <strong>{{x.fieldName}}</strong>
+                      <!--<small>Form</small>-->
+                  </div>
+                  <div class="card-block">
+                      <div class="panel-body">
+                        <form>
+                          <div class="row">
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">1.Sensor First Parameter</label>
+                                <input autocomplete="off" type="text" ng-model="x.ffirstParam" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                              </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">1.Sensor Second Parameter</label>
+                                <input autocomplete="off" type="text" ng-model="x.fsecondParam" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                <label for="exampleInputFile">Calibration Formula</label>
+                                <h4  id="exampleInputFile">Output = {{x.ffirstParam}} x Input + {{x.fsecondParam}}</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">2.Sensor First Parameter</label>
+                                <input autocomplete="off"  type="text" ng-model="x.lfirstParam" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">2.Sensor Second Parameter</label>
+                                <input autocomplete="off" type="text" ng-model="x.lsecondParam" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                <label for="exampleInputFile">Calibration Formula</label>
+                                <h4  id="exampleInputFile">Output = {{x.lfirstParam}} x Input + {{x.lsecondParam}}</h4>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-3">
+                              <div class="form-group">
+                                <label>Output Selection     :  </label></br>
+                                <label class="radio-inline">
+                                  <input type="radio" ng-model="x.outputType" name="inlineRadioOptions" id="inlineRadio1" value="min"> Minimum
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" ng-model="x.outputType" name="inlineRadioOptions" id="inlineRadio2" value="max"> Maximum
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" ng-model="x.outputType" name="inlineRadioOptions" id="inlineRadio3" value="mean"> Mean
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-12  text-center">
+                              <button ng-click="saveCalibs()" type="button" class="btn btn-warning custom-button-width .navbar-center">Save Settings</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      </br>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "name": "bolu-ogm",
+  "version": "1.0.0",
+  "description": "Orman Genel Müdürlüğü Bolu-Yenice Araştırma Projesi",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "del": "latest",
+    "express": "latest",
+    "express-session": "^1.15.3",
+    "method-override": "latest",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
+    "mongoose": "latest",
+    "wiredep": "latest"
+  },
+  "keywords": [
+    "nodejs",
+    "iot",
+    "express",
+    "embedded"
+  ],
+  "author": "Mehmet Kaan ERKOÇ",
+  "license": "ISC"
+}
