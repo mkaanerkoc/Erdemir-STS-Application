@@ -1,11 +1,11 @@
 angular
-.module('app')
+.module('app',['smart-table'])
 .controller('reportingCtrl', reportingController)
 
 
 reportingController.$inject = ['$scope','$http','$state'];
 function reportingController($scope, $http, $state) {
-  $scope.datas=[];
+  $scope.tableData=[];
   $scope.title = "Raporlama Ekranı";
   $scope.sites = [{name:"Kuzey Kollektörü",code:1},{name:"Güney Kollektörü",code:2}];
   $scope.channels = [];
@@ -21,14 +21,14 @@ function reportingController($scope, $http, $state) {
   $scope.updateSites = function(code){
     var s = $scope.selectedField;
     //console.log("hello world update sites  "+s.name);
-    if(s.code===1){
-      $scope.channels = [{name:"50 Metre",code:8},{name:"75 Metre",code:9},
-                          {name:"100 Metre",code:10},{name:"Tümü",code:91}];
+    if(s.code===2){
+      $scope.channels = [{name:"50 Metre",code:[8]},{name:"75 Metre",code:[9]},
+                          {name:"100 Metre",code:[10]},{name:"Tümü",code:[8,9,10]}];
     }
-    else if(s.code===2){
-      $scope.channels = [{name:"Su Alma Yapısı",code:2},{name:"0 Noktası",code:3},
-                        {name:"50 Metre",code:6},{name:"75 Metre",code:5},{name:"100 Metre",code:4},
-                        {name:"500 Metre",code:1},{name:"Tümü",code:92}];
+    else if(s.code===1){
+      $scope.channels = [{name:"Su Alma Yapısı",code:[2]},{name:"0 Noktası",code:[3]},
+                        {name:"50 Metre",code:[6]},{name:"75 Metre",code:[5]},{name:"100 Metre",code:[4]},
+                        {name:"500 Metre",code:[1]},{name:"Tümü",code:[1,2,3,4,5,6]}];
     }
 
   }
@@ -42,7 +42,16 @@ function reportingController($scope, $http, $state) {
   }
   $scope.showData = function(){
     if(valideInputs()){
-
+      $http({
+          url: '/report_demoo',
+          data : {channel:$scope.selectedChannel.code,startdate:$scope.startDate,enddate : $scope.endDate,timeperiod:$scope.selectedTimebase.minute},
+          method: "POST"
+        })
+      .then(function(response) {
+          // success
+        console.log(response.data);
+        $scope.tableData=response.data;
+      });
     }
     else{
       alert("Lütfen tüm bilgileri giriniz");
@@ -51,13 +60,14 @@ function reportingController($scope, $http, $state) {
   $scope.exportToExcel = function(){
       if(valideInputs()){
         $http({
-            url: '/report',
+            url: '/report_demoo',
             data : {channel:$scope.selectedChannel.code,startdate:$scope.startDate,enddate : $scope.endDate,timeperiod:$scope.selectedTimebase.minute},
             method: "POST"
           })
         .then(function(response) {
             // success
           console.log(response.data);
+          $scope.tableData=response.data;
         });
       }
       else{

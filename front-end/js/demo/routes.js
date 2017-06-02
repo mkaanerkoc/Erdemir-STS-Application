@@ -25,7 +25,7 @@ angular
       label: '0 Noktası'
     },
     params :
-      { channelCode:3 }
+      { channelCode:3 ,channelName:'Kuzey Kollektörü 0 Noktası'}
   })
   .state('app.s1.channel2', {
     url: '/',
@@ -33,7 +33,7 @@ angular
     ncyBreadcrumb: {
       label: 'Su Alma Yapısı'
     },
-    params:{channelCode:2}
+    params:{channelCode:2,channelName:'Kuzey Kollektörü Su Alma Yapısı'}
   })
   .state('app.s1.channel3', {
     url: '/',
@@ -41,7 +41,7 @@ angular
     ncyBreadcrumb: {
       label: '50 Metre'
     },
-    params:{channelCode:6}
+    params:{channelCode:6,channelName:'Kuzey Kollektörü 50. Metre'}
   })
   .state('app.s1.channel4', {
     url: '/',
@@ -49,7 +49,7 @@ angular
     ncyBreadcrumb: {
       label: '75 Metre'
     },
-    params:{channelCode:5}
+    params:{channelCode:5,channelName:'Kuzey Kollektörü 75. Metre'}
   })
   .state('app.s1.channel5', {
     url: '/',
@@ -57,7 +57,7 @@ angular
     ncyBreadcrumb: {
       label: '100 Metre'
     },
-    params:{channelCode:4}
+    params:{channelCode:4,channelName:'Kuzey Kollektörü 100. Metre'}
   })
   .state('app.s1.channel6', {
     url: '/',
@@ -65,7 +65,7 @@ angular
     ncyBreadcrumb: {
       label: '500 Metre'
     },
-    params:{channelCode:1}
+    params:{channelCode:1,channelName:'Kuzey Kollektörü 500. Metre'}
   })
   .state('app.s1.allchannels', {
     url: '/',
@@ -73,7 +73,7 @@ angular
     ncyBreadcrumb: {
       label: 'Kuzey Kollektörü'
     },
-    params:{channelCode:91}
+    params:{channelCode:91,channelName:'Kuzey Kollektörü'}
   })
   .state('app.s2', {
     url: "/guney",
@@ -97,7 +97,7 @@ angular
     ncyBreadcrumb: {
       label: '50 Metre'
     },
-    params:{channelCode:8}
+    params:{channelCode:8,channelName:'Güney Kollektörü 50. Metre'}
   })
   .state('app.s2.channel2', {
     url: '/',
@@ -105,7 +105,7 @@ angular
     ncyBreadcrumb: {
       label: '75 Metre'
     },
-    params:{channelCode:9}
+    params:{channelCode:9,channelName:'Güney Kollektörü 75. Metre'}
   })
   .state('app.s2.channel3', {
     url: '/',
@@ -113,7 +113,7 @@ angular
     ncyBreadcrumb: {
       label: '100 Metre'
     },
-    params:{channelCode:10}
+    params:{channelCode:10,channelName:'Güney Kollektörü 100. Metre'}
   })
   .state('app.s2.allchannels', {
     url: '/',
@@ -121,7 +121,7 @@ angular
     ncyBreadcrumb: {
       label: 'Güney Kollektörü'
     },
-    params:{channelCode:92}
+    params:{channelCode:92,channelName:'Güney Kollektörü'}
   })
   .state('app.calibration', {
     url: '/calibration',

@@ -20,7 +20,8 @@
     "bootstrap-datepicker": "^1.6.4",
     "datetimepicker": "^2.5.4",
     "angular-data-table": "^0.7.0",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "angular-smart-table": "^2.1.8"
   },
   "private": true,
   "authors": [

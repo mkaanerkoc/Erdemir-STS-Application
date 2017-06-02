@@ -1,4 +1,4 @@
-<div ng-controller="reportingCtrl">
+<div class="animated fadeIn" ng-controller="reportingCtrl">
   <div class="row">
       <div class="col-sm-12 col-lg-12 ">
           <div class="card">
@@ -80,4 +80,45 @@
       <!--/.col-->
     </div>
 
+    <!-- table row -->
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Veri Tablosu
+                </div>
+                <div class="card-block">
+                <table st-table="rowCollection" class="table table-bordered">
+                  <thead>
+                    <tr>
+                       <th class='text-center' ng-repeat="column in tableData.cols">{{column}}</th>
+                   </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="row in tableData.rows">
+                      <td class='text-center'>{{row[0].date}}
+                      <td class='text-center'>{{row[0].time}}
+                      <td class='text-center' ng-repeat="datas in row">{{datas.outTemp}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                  <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Prev</a>
+                      </li>
+                      <li class="page-item active">
+                          <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">4</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a>
+                      </li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

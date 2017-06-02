@@ -4,14 +4,15 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var rawLogSchema = new Schema({
-  devID: {type : String, default: ''},
+  _id      : [Schema.Types.ObjectId],
+  tempC    : {type : Number, default:0},
   serverDt : {type : Date},
-  nodeDt : {type : String,default :''},
   temp1    : {type : Number, default:0},
   temp2    : {type : Number, default:0},
-  tempC    : {type : Number, default:0},
   humdC    : {type : Number, default:0},
   rssi     : {type : Number, default:0},
+  nodeDt : {type : String,default :''},
+  devID: {type : Number, default: 0},
   mCrc     : {type : Number, default:0}
 });
 

@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <i class="fa fa-align-justify"></i> {{tagline}}
+                    <i class="fa fa-align-justify"></i> {{collectionName}}
                 </div>
                 <div class="card-block">
                     <table class="table table-bordered table-striped ">
@@ -20,7 +20,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                          <tr ng-repeat="log in datas">
+                          <tr ng-repeat="log in rowCollection">
                               <td class="text-center" title="'Tarih'" >
                                   {{log.date}}</td>
                               <td class="text-center" title="'Saat'" >
