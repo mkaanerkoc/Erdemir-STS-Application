@@ -60,7 +60,7 @@ function reportingController($scope, $http, $state) {
   $scope.exportToExcel = function(){
       if(valideInputs()){
         $http({
-            url: '/report_demoo',
+            url: '/excel_demo',
             data : {channel:$scope.selectedChannel.code,startdate:$scope.startDate,enddate : $scope.endDate,timeperiod:$scope.selectedTimebase.minute},
             method: "POST"
           })

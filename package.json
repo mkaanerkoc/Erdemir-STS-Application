@@ -15,7 +15,8 @@
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
     "mongoose": "latest",
-    "wiredep": "latest"
+    "wiredep": "latest",
+    "xlsx": "^0.10.3"
   },
   "keywords": [
     "nodejs",

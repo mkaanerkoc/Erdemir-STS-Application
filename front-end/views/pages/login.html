@@ -1,3 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+  <meta name="author" content="Mehmet Kaan ERKOÇ">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,Angular 2,Angular4,Angular 4,jQuery,CSS,HTML,RWD,Dashboard,React,React.js,Vue,Vue.js">
+  <link rel="shortcut icon" href="img/favicon.png">
+
+  <title>Erdemir - Sürekli Deniz Suyu Sıcaklığı İzleme Sistemi</title>
+
+  <!-- Main styles for this application -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../bower_components/angular-loading-bar/build/loading-bar.css" />
+  <link rel="stylesheet" href="bower_components/simple-line-icons/css/simple-line-icons.css" />
+  <!-- endbower -->
+  <link rel="stylesheet" href="../bower_components/datetimepicker/jquery.datetimepicker.css" />
+  <link rel="stylesheet" href="../bower_components/angular-data-table/release/dataTable.css"/>
+  <link rel="stylesheet" href="../bower_components/glyphicons/styles/glyphicons.css" />
+  <link rel="stylesheet" href="../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/tether/dist/js/tether.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+
+
 <div class="app flex-row align-items-center">
     <div class="container">
         <div class="row justify-content-center">
@@ -5,34 +40,35 @@
                 <div class="card-group mb-0">
                     <div class="card p-4">
                         <div class="card-block">
-                            <h1>Login</h1>
-                            <p class="text-muted">Sign In to your account</p>
+                            <h1>Kullanıcı Girişi</h1>
+                            <p class="text-muted">Hesabınızla Giriş Yapınız</p>
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="icon-user"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Username">
+                                <input id="userName" type="text" class="form-control" placeholder="Kullanıcı Adı">
                             </div>
                             <div class="input-group mb-4">
                                 <span class="input-group-addon"><i class="icon-lock"></i>
                                 </span>
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input id="userPassword" type="password" class="form-control" placeholder="Kullanıcı Şifresi">
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <button type="button" class="btn btn-primary px-4">Login</button>
+                                    <button id="loginButton" type="button" class="btn btn-primary px-4">Giriş</button>
                                 </div>
-                                <div class="col-6 text-right">
-                                    <button type="button" class="btn btn-link px-0">Forgot password?</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card card-inverse card-primary py-5 d-md-down-none" style="width:44%">
-                        <div class="card-block text-center">
-                            <div>
-                                <h2>Sign up</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <button type="button" class="btn btn-primary active mt-3">Register Now!</button>
+
+                                <script>
+                                  $( "#loginButton" ).click(function() {
+                                    var usrnm = $( "#userName" ).val();
+                                    var pass  = $( "#userPassword" ).val();
+                                    $.post( "/login",{username:usrnm,password:pass}, function( data ) {
+                                      if(data=="normal-user"){
+                                         console.log("yow");
+                                        $(location).attr('href','/');
+                                      }
+                                    });
+                                  });
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -41,3 +77,18 @@
         </div>
     </div>
 </div>
+
+
+<!-- endbower -->
+
+
+<script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../bower_components/datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+
+
+
+<!-- Google API's -->
+
+</body>
+</html>

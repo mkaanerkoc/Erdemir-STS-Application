@@ -4,7 +4,7 @@ var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose       = require('mongoose');
-
+var session = require('express-session');
 
 var db = require('./back-end/website/config/db');
 
@@ -26,13 +26,25 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static('bower_components'));
 app.use(express.static('front-end'));
 
+app.use(session(
+        {secret: 'Okyanus1900'},
+        {
+          cookie: {
+            path: '/',
+            httpOnly: true,
+            secure: false,
+            resave : true,
+            maxAge: 2 * 60 * 1000
+          },
+          rolling: true}
+));
 
-require('./back-end/website/routes/router')(app);
+
 require('./back-end/website/rest/channels')(app);
 require('./back-end/website/rest/data')(app);
 require('./back-end/website/rest/website')(app);
 require('./back-end/website/rest/reporting')(app);
-
+require('./back-end/website/routes/router')(app);
 
 app.listen(port);
 // shoutout to the user
