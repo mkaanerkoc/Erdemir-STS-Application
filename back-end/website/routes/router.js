@@ -23,7 +23,7 @@ module.exports = function(app) {
      var username = req.body.username;
      var password = req.body.password;
 
-     console.log(req.body);
+     //console.log(req.body);
      if(username=='admin'&&password=='Erdemir12345'){
        sess = req.session;
        sess.username=req.body.username;

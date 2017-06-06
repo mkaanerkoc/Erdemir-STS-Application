@@ -9,7 +9,7 @@ function calibrationController($scope, $http, $state) {
   $scope.title = "Kalibrasyon Menusu";
   $http({
       url: '/calibration',
-      method: "POST"
+      method: "GET"
     })
   .then(function(response) {
       // success
@@ -22,6 +22,18 @@ function calibrationController($scope, $http, $state) {
     });
   });
 
+$scope.saveCalibs = function(){
+    $http({
+        url: '/calibration',
+        method: "POST",
+        data : $scope.calibDatas
+      })
+    .then(function(response) {
+        // success
+      console.log(response);
+      alert("Kaydedildi!");
+    });
+  }
 }
 
 

@@ -50,7 +50,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/calibration',function(req,res){
+  app.get('/calibration',function(req,res){
 
     calibrationModel.find({}).sort({'devId':1})
     .catch(function(err){
@@ -61,7 +61,18 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/updateCalibs',function(req,res){
+  app.post('/calibration',function(req,res){
+    var calibData = req.body;
+    calibData.forEach(function(cc){
+      var query = {'devId':cc.devId};
+      calibrationModel.findOneAndUpdate(query, cc, {upsert:true}, function(err, doc){
+
+      });
+    });
+    res.json("OK");
+  });
+
+  app.get("/summary_data",function(req,res){
 
   });
 

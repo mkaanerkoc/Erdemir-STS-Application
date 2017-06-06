@@ -1,132 +1,49 @@
-<div class="animated fadeIn" ng-controller="mainController">
+<div class="animated fadeIn" ng-controller="mainCtrl">
     <div class="row">
-      <br>
-        <div id="map" style="width:100%;height:450px"></div>
-      <br>
+      <div class="col-lg-12">
+        <br>
+          <div id="map" style="width:100%;height:450px"></div>
+        <br>
+      </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-lg-3">
-            <div class="card card-inverse card-primary" ng-controller="cardChartCtrl1">
-                <div class="card-block pb-0">
-                    <div class="btn-group float-right">
-                        <button type="button" class="btn btn-transparent dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="icon-settings"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                    <h4 class="mb-0">9.823</h4>
-                    <p>Members online</p>
+        <div class="col-sm-12 col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> 10 Dakikalık Ortalama Sıcaklık Verileri
                 </div>
-                <div class="chart-wrapper px-3" style="height:70px;">
-                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
-                </div>
-            </div>
-        </div>
-        <!--/.col-->
-
-        <div class="col-sm-6 col-lg-3">
-            <div class="card card-inverse card-info" ng-controller="cardChartCtrl2">
-                <div class="card-block pb-0">
-                    <button type="button" class="btn btn-transparent p-0 float-right">
-                        <i class="icon-location-pin"></i>
-                    </button>
-                    <h4 class="mb-0">9.823</h4>
-                    <p>Members online</p>
-                </div>
-                <div class="chart-wrapper px-3" style="height:70px;">
-                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
-                </div>
-            </div>
-        </div>
-        <!--/.col-->
-
-        <div class="col-sm-6 col-lg-3">
-            <div class="card card-inverse card-warning" ng-controller="cardChartCtrl3">
-                <div class="card-block pb-0">
-                    <div class="btn-group float-right">
-                        <button type="button" class="btn btn-transparent dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="icon-settings"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                    <h4 class="mb-0">9.823</h4>
-                    <p>Members online</p>
-                </div>
-                <div class="chart-wrapper" style="height:70px;">
-                    <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="options" chart-colors="colors" height="70"></canvas>
-                </div>
-            </div>
-        </div>
-        <!--/.col-->
-
-        <div class="col-sm-6 col-lg-3">
-            <div class="card card-inverse card-danger" ng-controller="cardChartCtrl4">
-                <div class="card-block pb-0">
-                    <div class="btn-group float-right">
-                        <button type="button" class="btn btn-transparent dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="icon-settings"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                    <h4 class="mb-0">9.823</h4>
-                    <p>Members online</p>
-                </div>
-                <div class="chart-wrapper px-3" style="height:70px;">
-                    <canvas class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options" chart-colors="colors" height="70"></canvas>
-                </div>
-            </div>
-        </div>
-        <!--/.col-->
-    </div>
-    <!--/.row-->
-    <div class="card" ng-controller="trafficDemoCtrl">
-        <div class="card-block">
-            <div class="row">
-                <div class="col-sm-5">
-                    <h4 class="card-title mb-0">Traffic</h4>
-                    <div class="small text-muted">November 2015</div>
-                </div>
-                <!--/.col-->
-                <div class="col-sm-7 hidden-sm-down">
-                    <button type="button" class="btn btn-primary float-right"><i class="icon-cloud-download"></i>
-                    </button>
-                    <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="btn-group mr-3" data-toggle="buttons" aria-label="First group">
-                            <label class="btn btn-outline-secondary">
-                                <input type="radio" name="options" id="option1">Day
-                            </label>
-                            <label class="btn btn-outline-secondary active">
-                                <input type="radio" name="options" id="option2" checked>Month
-                            </label>
-                            <label class="btn btn-outline-secondary">
-                                <input type="radio" name="options" id="option3">Year
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <!--/.col-->
-            </div>
-            <!--/.row-->
-            <div class="chart-wrapper" style="height:300px;margin-top:40px;">
-                <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-click="onClick" chart-options="options" chart-colors="colors" height="300"></canvas>
             </div>
         </div>
     </div>
-
+    <div id="dataGridDiv" class="row">
+        <!-- -->
+        <div ng-repeat="x in tableNames" class="col-lg-3">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="panel-title">{{x}}</h4>
+            </div>
+            <div class="card-block">
+              <table class="table table-striped table-bordered table-hover" data-toggle="table">
+                <thead>
+                  <tr>
+                    <th class="text-center">Tarih</th>
+                    <th class="text-center">Saat</th>
+                    <th class="text-center">Su Sıcaklığı (&#8451;)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="y in tableData[$index]">
+                    <td class="text-center">{{ y.date }}</td>
+                    <td class="text-center">{{ y.time }}</td>
+                    <td class="text-center">{{ y.outTemp }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
     </div>
-    <!--/.row-->
-    <!--/.row-->
 
 </div>
+    <!--/.row-->
+    <!--/.row-->

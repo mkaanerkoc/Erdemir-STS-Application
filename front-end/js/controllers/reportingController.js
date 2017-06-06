@@ -17,6 +17,7 @@ function reportingController($scope, $http, $state) {
 
   $scope.startDate = null;
   $scope.endDate = null;
+  $scope.itemsByPage=15;
 
   $scope.updateSites = function(code){
     var s = $scope.selectedField;
@@ -43,8 +44,8 @@ function reportingController($scope, $http, $state) {
   $scope.showData = function(){
     if(valideInputs()){
       $http({
-          url: '/report_demoo',
-          data : {channel:$scope.selectedChannel.code,startdate:$scope.startDate,enddate : $scope.endDate,timeperiod:$scope.selectedTimebase.minute},
+          url: '/reportV2',
+          data : {channel:$scope.selectedChannel.code,startdate:$scope.startDate,enddate : $scope.endDate,timeperiod:$scope.selectedTimebase.minute,summary:true},
           method: "POST"
         })
       .then(function(response) {
