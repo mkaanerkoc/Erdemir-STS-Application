@@ -20,16 +20,12 @@ function mainController($scope, $http, $state) {
     date2 = date2.toISOString();
     date = date.toISOString();
     var data_  = {channel:[1,2,3,4,5,6,8,9,10],startdate:date2 ,enddate : date,timeperiod:10,summary:false};
-    console.log(data_);
-//    var data_  = {'from':'2017-04-17T01:00:31.675Z','to':'2017-04-17T02:00:31.675Z','timebase':'1','limit':'10'};
-    //console.log(data_);
     $http({
         url: '/reportV2',
         method: "POST",
         data: data_
       })
     .then(function(response){
-      console.log(response);
       $scope.tableNames = response.data.cols.slice(2);
       $scope.tableData = response.data.rows;
     });

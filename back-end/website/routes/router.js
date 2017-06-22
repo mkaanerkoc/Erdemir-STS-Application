@@ -4,15 +4,12 @@ var path = require('path');
 module.exports = function(app) {
   var sess;
    app.get('/', function(req, res) {
-     console.log("im here");
      sess = req.session;
      if(sess.username) {
          //res.sendFile(path.resolve('/front-end/index.html'));
-        console.log("here");
         res.sendFile(path.resolve('./index.html'));
      }
      else {
-        console.log("here b");
         res.sendFile(path.resolve('./front-end/views/pages/login.html'));
         //res.sendFile("/home/mkaanerkoc/Desktop/Erdemir-STS Website//public/login.html");
      }

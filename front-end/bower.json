@@ -1,6 +1,6 @@
 {
-  "name": "bolu-ogm",
-  "description": "Orman Genel Mudurlugu Bolu-Yenice Arastirma Projesi",
+  "name": "erdemir-sts",
+  "description": "Erdemir Deniz Sicakliklari Surekli Izleme ve Takip Projesi",
   "main": "main.js",
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",

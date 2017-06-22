@@ -1,7 +1,7 @@
 {
-  "name": "bolu-ogm",
+  "name": "erdemir-sts",
   "version": "1.0.0",
-  "description": "Orman Genel Müdürlüğü Bolu-Yenice Araştırma Projesi",
+  "description": "Erdemir Deniz Sicakliklari Surekli Izleme ve Takip Projesi",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

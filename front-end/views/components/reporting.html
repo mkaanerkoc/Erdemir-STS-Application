@@ -95,18 +95,18 @@
                    </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="row in tableData.rows">
+                    <tr ng-repeat="row in rowCollection">
                       <td class='text-center'>{{row[0].date}}
                       <td class='text-center'>{{row[0].time}}
                       <td class='text-center' ng-repeat="datas in row">{{datas.outTemp}}</td>
                     </tr>
                   </tbody>
                   <tfoot>
-            			<tr>
-            				<td colspan="5" class="text-center">
-            					<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
-            				</td>
-            			</tr>
+              			<tr>
+              				<td colspan="5" class="text-center">
+              					<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+              				</td>
+              			</tr>
             		</tfoot>
                 </table>
                 </div>

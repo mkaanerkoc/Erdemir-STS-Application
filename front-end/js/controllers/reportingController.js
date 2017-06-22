@@ -6,6 +6,7 @@ angular
 reportingController.$inject = ['$scope','$http','$state'];
 function reportingController($scope, $http, $state) {
   $scope.tableData=[];
+  $scope.rowCollection=[];
   $scope.title = "Raporlama Ekranı";
   $scope.sites = [{name:"Kuzey Kollektörü",code:1},{name:"Güney Kollektörü",code:2}];
   $scope.channels = [];
@@ -52,6 +53,7 @@ function reportingController($scope, $http, $state) {
           // success
         console.log(response.data);
         $scope.tableData=response.data;
+        $scope.rowCollection = response.data.rows;
       });
     }
     else{
