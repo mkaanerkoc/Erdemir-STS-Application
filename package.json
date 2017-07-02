@@ -9,6 +9,7 @@
   "dependencies": {
     "body-parser": "latest",
     "del": "latest",
+    "excel4node": "^1.2.1",
     "express": "latest",
     "express-session": "^1.15.3",
     "method-override": "latest",

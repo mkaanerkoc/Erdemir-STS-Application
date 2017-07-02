@@ -3,8 +3,8 @@ angular
 .controller('reportingCtrl', reportingController)
 
 
-reportingController.$inject = ['$scope','$http','$state'];
-function reportingController($scope, $http, $state) {
+reportingController.$inject = ['$scope','$http','$window','$state'];
+function reportingController($scope, $http, $window,$state) {
   $scope.tableData=[];
   $scope.rowCollection=[];
   $scope.title = "Raporlama Ekranı";
@@ -68,9 +68,10 @@ function reportingController($scope, $http, $state) {
             method: "POST"
           })
         .then(function(response) {
-            // success
-          console.log(response.data);
-          $scope.tableData=response.data;
+        // success
+            $window.open('/excel_demo');
+          //console.log(response.data);
+          //$scope.tableData=response.data;
         });
       }
       else{

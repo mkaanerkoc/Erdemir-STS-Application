@@ -15,7 +15,7 @@ function tableController($scope, $http, $state) {
       method: "POST"
     })
   .then(function(response) {
-    console.log(response.data);
+    //console.log(response.data);
     $scope.rowCollection=response.data;
   });
 }
